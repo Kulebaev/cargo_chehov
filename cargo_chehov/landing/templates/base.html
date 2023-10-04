@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- необходимые мета-теги -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="google-site-verification" content="GrjM26kBNrKRFBVwjMpqmNss67fLqDI2jy9LnXmS-sQ" />
+    <meta name="yandex-verification" content="2d60377cdf088e39" />
+    
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" id="bootstrap-style" />
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/yandex_map.css' %}" id="bootstrap-style" />
+    <!-- Material Icon Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialdesignicons.min.css' %}" />
+    
+    <!-- Unicon Css -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    
+    <!-- Swiper Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tiny-slider.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css' %}" />
+    
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}" />
+    
+    <!-- colors -->
+    <link href="{% static 'css/colors/default.css' %}" rel="stylesheet" type="text/css" id="color-opt" />
+    
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(95038754, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/95038754" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+
+    <!-- Мета-теги -->
+    <meta name="description" content="Грузоперевозки по Московской области. Надежная и быстрая доставка грузов в Московской области.">
+    <meta name="author" content="Ваша компания по грузоперевозкам">
+    <meta name="robots" content="index, follow">
+
+    <meta name="keywords" content="грузоперевозки, Московская область, доставка грузов, транспортные услуги">
+    <meta name="keywords" content="грузоперевозки, грузовики, логистика, перевозки">
+    <meta name="keywords" content="грузоперевозки Московская область, доставка грузов, логистика">
+    <!-- / Мета-теги -->
+
+
+    <!-- open graph -->
+    <meta property="og:title" content="Английский язык и разговорные клубы английского языка в Пензе.">
+    <meta property="og:description" content="Английский язык в Пензе. Изучайте английский язык с опытными преподавателями и персонализированными курсами.">
+    <meta property="og:image" content="https://english-in-penza.ru/static/img/english-og.jpg">
+    <meta property="og:url" content="https://english-in-penza.ru">
+    <!-- /open graph -->
+    <link rel="canonical" href="https://english-in-penza.ru" />
+    
+    <title>Грузоперевозки по Московской области и Москве</title>
+</head>
+<body  data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="71">
+    {% block header %}  <!-- Вставляем содержимое блока header -->
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block content %} {% endblock %}
+    
+    {% block footer %}
+        {% include 'footer.html' %}
+    {% endblock %}
+    <!-- Bootstrap Js -->
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Slider Js -->
+<script src="{% static 'js/tiny-slider.js' %}"></script>
+<script src="{% static 'js/swiper.min.js' %}"></script>
+
+<!-- Uncomment and use the following lines if needed -->
+<!-- <script src="{% static 'js/smooth-scroll.polyfills.min.js' %}"></script> -->
+
+<!-- counter -->
+<!-- <script src="{% static 'js/counter.init.js' %}"></script> -->
+
+<!-- App Js -->
+<script src="{% static 'js/app.js' %}"></script>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+<script src="{% static 'js/change_theme.js' %}"> </script>
+<script src="{% static 'js/change_map.js' %}"> </script>
+</body>
+
+</html>

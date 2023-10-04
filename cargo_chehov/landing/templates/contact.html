@@ -1,0 +1,172 @@
+{% load static %}
+<!-- contact section -->
+<section class="section contact overflow-hidden" id="contact">
+    <!-- start container -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="title text-center mb-5">
+                    <h2 class="f-40">Свяжитесь с нами!</h2>
+                    <p class="text-muted">Заполните форму ниже и мы рассчитаем Вам доставку.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="contact-box">
+                    <div class="mb-4">
+                        <h4 class=" fw-semibold mb-1">Хотите узнать стоимость?</h4>
+                        <p class="text-muted">Заолните форму ниже.</p>
+                    </div>
+
+                    <div class="custom-form mt-4">
+                        <form method="post" name="myForm" onsubmit="return validateForm()" action="{% url 'message_text' %}">
+                            {% csrf_token %}
+                            <p id="error-msg" style="opacity: 1;"></p>
+                        
+                            <div id="simple-msg"></div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Ваше имя<span class="text-danger">*</span></label>
+                                        <input name="name" id="name" type="text" class="form-control contact-form"
+                                            placeholder="Ваше имя" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Ваш номер<span class="text-danger">*</span></label>
+                                        <input name="phone" id="phone" type="text" class="form-control contact-form"
+                                            placeholder="Ваш номер" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="address_from" class="form-label">Адрес откуда везти<span>:</span></label>
+                                        <input name="address_from" id="address_from" type="text" class="form-control contact-form"
+                                            placeholder="Адрес откуда везти">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="address_to" class="form-label">Адрес куда везти<span>:</span></label>
+                                        <input name="address_to" id="address_to" type="text" class="form-control contact-form"
+                                            placeholder="Адрес куда везти" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2">
+                                        <label for="comments" class="form-label">Ваше сообщение</label>
+                                        <textarea name="comments" id="comments" rows="4"
+                                            class="form-control contact-form h-auto"
+                                            placeholder="Ваше сообщение..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-lg-12 d-grid">
+                                    <input type="submit" id="submit" name="send"
+                                        class="submitBnt btn btn-rounded btn-primary" value="Отправить сообщение">
+                                </div>
+                            </div>
+                        </form>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="m-5">
+                    <div class="position-relative">
+                        <div class="contact-map">
+                            <div id="map" class="smallMap_350 mx-auto" style="width: 550px; height: 450px; border: 1px solid #2f64b4;"></div>
+                        </div>
+                        <div class="map-shape"></div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        <div class="row mt-4" id="contact-a">
+            <div class="col-md-4">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="mdi mdi-google-maps f-50 text-primary"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="mb-1">Местоположение</h5>
+                        <p class="f-14 mb-0 text-muted">г.Пенза ул.Захарова 1а офис 3</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-center mt-4 mt-lg-0">
+                    <div class="flex-shrink-0">
+                        <i class="mdi mdi-email f-50 text-primary"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="mb-1">Электронная почта</h5>
+                        <p class="f-14 mb-0 text-muted">Email: 
+                            <a href="mailto:info@english-in-penza.ru" class="text-secondary">info@english-in-penza.ru</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-center mt-4 mt-lg-0">
+                    <div class="flex-shrink-0">
+                        <i class="mdi mdi-phone f-50 text-primary"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="mb-1">Телефон</h5>
+                        <p class="f-14 mb-0 text-muted">Телефон: 
+                            <a href="tel:+79099100464" class="text-secondary">+7 (909) 910-04-64</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+</section>
+<!-- end section -->
+
+<!-- script section -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.0.3/imask.min.js"></script>
+
+<script>
+    var phoneInput = document.getElementById('phone'); // Замените 'phone' на ID вашего поля ввода номера.
+
+    var phoneMask = new IMask(phoneInput, {
+        mask: '+7 (000) - 000 - 00 - 00'
+    });
+</script>
+
+
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=55f528ad-d523-4198-b0c9-7f6a83fce17e
+&lang=ru_RU" type="text/javascript"></script>
+
+<script>
+    ymaps.ready(init);
+
+    function init() {
+        var myMap = new ymaps.Map("map", {
+            center: [53.194637, 45.00158], 
+            zoom: 10,
+        });
+
+        var myPlacemark = new ymaps.Placemark(
+            [53.194637, 45.00158],
+            {
+                hintContent: "Пенза, улица Захарова, 1А",
+                balloonContent: "школа английского языка",
+            }
+        );
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+</script>

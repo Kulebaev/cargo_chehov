@@ -1,0 +1,66 @@
+{% load static %}
+<!-- light-dark mode button -->
+<a href="javascript: void(0);" id="mode" class="mode-btn text-white rounded-end">
+    <i class="uil uil-brightness mode-dark mx-auto"></i>
+    <i class="uil uil-moon bx-spin mode-light"></i>
+</a>
+
+<!-- START  NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-light" id="navbar">
+    <div class="container-fluid">
+
+        <!-- LOGO -->
+        <a class="navbar-brand logo text-uppercase" href="/">
+            <img src="{% static 'images/logo-light.png' %}" class="logo-light" alt="" height="30">
+            <img src="{% static 'images/logo-dark.png' %}" class="logo-dark" alt="" height="30">
+            <span>пере<strong>ВОЗ</strong>кин</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="mdi mdi-menu"></span>
+        </button>
+
+        <div class="collapse navbar-collapse ms-auto" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto" id="navbar-navlist">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#cta">О нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+<script>
+    $(document).ready(function () {
+        // Ваш код для удаления хеш-фрагмента при клике на якорную ссылку в навигационной панели
+        $('.nav-link').on('click', function (e) {
+            var href = this.getAttribute('href');
+            var myHref = href.split('#');
+            if (myHref[0] === "/" || myHref[0] === "") {
+                // Если ссылка ведет на "/", то перезагружаем страницу
+                return true;
+            }
+            e.preventDefault();
+        });
+
+        // Добавляем обработку якорных ссылок для плавного скролла в навигационной панели
+        $('.nav-link').on('click', function (e) {
+            var href = this.getAttribute('href');
+            var target = $(href);
+            if (target.length) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000); // Задайте желаемую продолжительность анимации
+            }
+        });
+    });
+</script>

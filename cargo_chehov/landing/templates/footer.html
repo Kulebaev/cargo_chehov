@@ -1,0 +1,71 @@
+{% load static %}
+<!-- footer section -->
+<section class=" section footer bg-dark overflow-hidden">
+  <div class="bg-arrow">
+      
+  </div>
+  <!-- container -->
+  <div class="container">
+      <div class="row ">
+          <div class="col-lg-6">
+              <a class="navbar-brand logo text-uppercase" href="/">
+                  <img src="{% static 'images/logo-footer.png' %}" class="logo-light" alt="" height="30">
+                  <!-- <img src="images/logo-dark.png" class="logo-dark" alt="" height="28"> -->
+                  <span class="text-white">пере<b>ВОЗ</b>кин</span>
+              </a>
+              <p class="text-white-50 mt-2 mb-0">Добро пожаловать на English in Penza! 
+                Мы предоставляем качественные курсы английского языка для всех возрастов и уровней.</p>
+
+              <div class="footer-icon mt-4">
+                  <div class=" d-flex align-items-center">
+                      <a href="https://t.me/speakingtroubleolga" class="me-2 avatar-sm text-center" data-bs-toggle="tooltip"
+                          data-bs-placement="top" title="telegram" target="_blank">
+                          <i class="mdi mdi-telegram f-24 align-middle text-primary"></i>
+                      </a>
+                      <a href="" class="mx-2 avatar-sm text-center">
+                          <i class="mdi mdi-vk f-24 align-middle text-primary" data-bs-toggle="tooltip"
+                              data-bs-placement="top" title="vk" target="_blank"></i>
+                      </a>
+                      <a href="https://wa.me/79099100464?text=Здравствуйте!Я бы хотел записаться на пробное занятие." class="mx-2 avatar-sm text-center">
+                        <i class="mdi mdi-whatsapp f-24 align-middle text-primary" data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="whatsapp" target="_blank"></i>
+                    </a>
+                  </div>
+
+              </div>
+          </div>
+          <div class="col-lg-6 ms-auto">
+            <h5 class="text-white">Подписка</h5>
+            <form method="POST" action="{% url 'subscribe' %}">
+                {% csrf_token %}
+                <div class="input-group my-4">
+                    <input type="email" name="email" class="form-control p-3" placeholder="Введите ваш email" aria-label="Email" aria-describedby="basic-addon2">
+                    <button type="submit" class="input-group-text bg-primary text-white px-4" id="basic-addon2">Подписаться</button>
+                </div>
+            </form>
+            <p class="mb-0 text-white-50">Будьте в курсе всех новостей и актуальных событий. 
+              Подпишитесь на нашу рассылку, чтобы получать обновления и специальные предложения. 
+              Начните сегодня и оставайтесь в курсе!
+            </p>
+            
+          </div>
+      </div>
+  </div>
+  <!-- end container -->
+</section>
+
+<section class="bottom-footer py-4">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-6">
+              <p class="mb-0 text-center text-muted">©
+                  <script>document.write(new Date().getFullYear())</script> 
+                  English in Penza. Все права защищены.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<script> </script>
+<!-- end footer -->

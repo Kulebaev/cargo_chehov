@@ -1,0 +1,47 @@
+{% load static %}
+<!-- home section -->
+<section class="home bg-light" id="home">
+    <!-- start container -->
+    <div class="container">
+        <!-- start row -->
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold">Грузоперевозки по Московской области</h1>
+                <p class="mt-4 text-muted">Мы предоставляем профессиональные грузоперевозки по Московской области.
+                    Наша компания специализируется на быстрой и надежной доставке грузов
+                    в любую точку Московской области. Независимо от объема или характера вашего груза,
+                    мы обеспечим качественное обслуживание и конкурентоспособные цены.
+                    Наши квалифицированные водители и современный автопарк гарантируют безопасную и своевременную доставку.
+                    Мы ценим ваше время и ваш груз.</p>
+
+                    <button class="btn bg-gradiant mt-4" id="scrollToContact">Оставить заявку</button>
+            </div>
+
+            <div class="col-lg-5 offset-md-1">
+                <img src="{% static 'images/home_sections.png' %}" alt="" class="img-fluid">
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+
+    <div class="background-line"></div>
+</section>
+<!-- end home section -->
+
+<script>
+    $(document).ready(function() {
+        // Обработчик события для нажатия на кнопку "Записаться на занятие"
+        $("#scrollToContact").click(function() {
+            var target = $("#contact"); // Идентификатор якоря "contact"
+            
+            if (target.length) {
+                // Прокручиваем страницу к якорю с помощью анимации
+                $("html, body").animate({
+                    scrollTop: target.offset().top
+                }, 500); // Задайте желаемую продолжительность анимации
+            }
+        });
+    });
+    </script>
+    

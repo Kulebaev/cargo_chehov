@@ -25,7 +25,7 @@ def subscribe_view(request):
     try:
         validate_email(email)
     except ValidationError:
-        # Если email не проходит валидацию, вы можете обработать ошибку
+        # Если email не проходит валидацию, обработать ошибку
         return render(request, 'index.html') 
 
     print(email)
@@ -65,12 +65,12 @@ def message_text(request):
                f"Адрес откуда везти: {address_from}\n"
                f"Адрес куда везти: {address_to}\n"
                f"Сообщение: {comments}")
-    chat_id = '-1001947019551'  # Замените на ID вашего чата в Telegram
+    chat_id = '-1001947019551' 
 
     bot.send_message(chat_id ,message)
     
     messages.success(request, 'Сообщение успешно отправлено!')
-    # После успешной обработки данных, перенаправьте пользователя на главную страницу
+
     return HttpResponseRedirect('/')
     
 
